@@ -28,11 +28,8 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.anything;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.when;
 
 @RunWith(AndroidJUnit4.class)
@@ -42,8 +39,6 @@ public class MainActivityTest {
             new TestComponentRule(InstrumentationRegistry.getTargetContext());
     public final ActivityTestRule<MainActivity> main =
             new ActivityTestRule<>(MainActivity.class, false, false);
-
-    public static final String TITLE_PATTERN = "#{0} {1}";
 
     // TestComponentRule needs to go first to make sure the Dagger ApplicationTestComponent is set
     // in the Application before any Activity is launched.

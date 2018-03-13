@@ -21,21 +21,10 @@ import io.reactivex.schedulers.Schedulers;
 public class RxSchedulersOverrideRule implements TestRule {
 
     private final Function<Callable<Scheduler>, Scheduler> mRxAndroidSchedulersHook =
-            new Function<Callable<Scheduler>, Scheduler>() {
-                @Override
-                public Scheduler apply(@NonNull Callable<Scheduler> schedulerCallable)
-                        throws Exception {
-                    return getScheduler();
-                }
-            };
+            schedulerCallable -> getScheduler();
 
     private final Function<Scheduler, Scheduler> mRxJavaImmediateScheduler =
-            new Function<Scheduler, Scheduler>() {
-                @Override
-                public Scheduler apply(@NonNull Scheduler scheduler) throws Exception {
-                    return getScheduler();
-                }
-            };
+            scheduler -> getScheduler();
 
     @Override
     public Statement apply(final Statement base, Description description) {

@@ -3,7 +3,6 @@ package com.russellgutierrez.demo.zuhlke.dog.data.model;
 import android.support.annotation.Nullable;
 
 import com.google.auto.value.AutoValue;
-import com.google.common.collect.ImmutableList;
 
 import java.util.ArrayList;
 import java.util.Collections;

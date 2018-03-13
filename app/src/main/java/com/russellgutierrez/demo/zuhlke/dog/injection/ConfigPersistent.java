@@ -1,11 +1,11 @@
 package com.russellgutierrez.demo.zuhlke.dog.injection;
 
+import com.russellgutierrez.demo.zuhlke.dog.injection.component.ConfigPersistentComponent;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 import javax.inject.Scope;
-
-import com.russellgutierrez.demo.zuhlke.dog.injection.component.ConfigPersistentComponent;
 
 /**
  * A scoping annotation to permit dependencies conform to the life of the

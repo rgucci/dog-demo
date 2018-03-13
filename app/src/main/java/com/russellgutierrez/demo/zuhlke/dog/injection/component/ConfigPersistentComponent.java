@@ -1,9 +1,10 @@
 package com.russellgutierrez.demo.zuhlke.dog.injection.component;
 
-import dagger.Component;
 import com.russellgutierrez.demo.zuhlke.dog.injection.ConfigPersistent;
 import com.russellgutierrez.demo.zuhlke.dog.injection.module.ActivityModule;
 import com.russellgutierrez.demo.zuhlke.dog.ui.base.BaseActivity;
+
+import dagger.Component;
 
 /**
  * A dagger component that will live during the lifecycle of an Activity but it won't

@@ -4,14 +4,15 @@ import android.os.Bundle;
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.app.AppCompatActivity;
 
-import java.util.concurrent.atomic.AtomicLong;
-
-import timber.log.Timber;
 import com.russellgutierrez.demo.zuhlke.dog.DemoApplication;
 import com.russellgutierrez.demo.zuhlke.dog.injection.component.ActivityComponent;
 import com.russellgutierrez.demo.zuhlke.dog.injection.component.ConfigPersistentComponent;
 import com.russellgutierrez.demo.zuhlke.dog.injection.component.DaggerConfigPersistentComponent;
 import com.russellgutierrez.demo.zuhlke.dog.injection.module.ActivityModule;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+import timber.log.Timber;
 
 /**
  * Abstract activity that every other Activity in this application must implement. It handles
