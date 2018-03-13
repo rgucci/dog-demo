@@ -1,4 +1,4 @@
-# Images Demo App - TinkLabs Coding Test
+# Dogs Demo App - Zuhlke Coding Test
 
 This project is based on [work](https://github.com/ribot/android-boilerplate) created by [ribot](http://ribot.co.uk) as a reference for new Android projects.
 Libraries and tools included:
