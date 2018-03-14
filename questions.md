@@ -5,6 +5,7 @@ The API calls are asynchronous, so MainPresenter needs to subscribe to these "ob
 to be notified once the API has finished executing (or returns an error). 
 If the API completes (either successfully or with an error), then everything is fine,
 and MainPresenter will update the view (MainActivity).
+
 Due to the nature of the Activity lifecycle in Android, it can happen that the activity will be paused/destroyed/etc.
 If this happens while the API has not yet completed, then the subscriber (MainPresenter) will still be notified once
 the API call has completed, so there will be problems and probably exceptions when the MainPresenter tries to update the view that has already been paused/destroyed/etc.
@@ -12,8 +13,6 @@ So mDisposable is used to keep track of all the subscriptions made by MainPresen
 when the activity is destroyed.
 
 - MainPresenter: what is the purpose of .observeOn method and .subscribeOn method in getImageFromServcice method?
-
-.observeOn and .subscribeOn are used in all of the RX subscriptions in the presenter.
 
 .observeOn specifies which thread the subscriber (presenter updating the view) will run on.
 In this case, we specify that it should run in my ain the Android thread, since this is the only thread allowed to update the UI.
@@ -53,9 +52,10 @@ which specific objects to use during injection, and who is allowed to usy these 
 
 @ActivityContext is used to specify that an object is to be used with an instance of an activity only.
 
-Both are also used to determine which object to inject, in case it is available from different source.
-For example Context is available from both ApplicationComponent and ActivityComponent.
-Using the correct annotation makes sure that we get the correct Context injected (Application or Activity instance).
+Both are also used to determine which object to inject, in case it is available from more than one source.
+You may notice that Context is provided by both ApplicationModule and ActivityModule.
+When a Context is requested thru injection, using the correct annotation makes sure that we get the correct 
+kind of Context injected (Application or Activity instance).
 
 There is also a 3rd annotation @PerActivity, that specifies the scope of the object.
 In this case, @PerActivity is used in ActivityComponent, to tell Dagger2 that we want each activity 
