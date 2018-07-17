@@ -52,6 +52,12 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mMainPresenter.detachView();
+    }
+
+    @Override
     public void showDogBreeds(List<Breed> breeds) {
         CustomArrayAdapter<Breed> adapter = new CustomArrayAdapter<Breed>(this, android.R.layout.simple_spinner_item, breeds) {
             @Override
